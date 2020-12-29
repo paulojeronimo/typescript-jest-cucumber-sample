@@ -1,0 +1,3 @@
+= typescript-jest-cucumber-sample
+
+Read https://paulojeronimo.com/bdd-tutorial/#typescript-jest-cucumber-sample.

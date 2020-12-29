@@ -1,0 +1,19 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "jest": "^26.6.3",
+    "jest-cucumber": "^3.0.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

@@ -1,0 +1,27 @@
+diff --git a/cucumber/step-definitions/basic-scenarios.steps.ts b/cucumber/step-definitions/basic-scenarios.steps.ts
+index f44f552..6a3a000 100644
+--- a/cucumber/step-definitions/basic-scenarios.steps.ts
++++ b/cucumber/step-definitions/basic-scenarios.steps.ts
+@@ -1,15 +1,19 @@
+ import { loadFeature, defineFeature } from 'jest-cucumber'
++import { PasswordValidator } from '../../src/password-validator'
+ 
+ defineFeature(loadFeature('cucumber/features/basic-scenarios.feature'), (test) => {
++	const passwordValidator = new PasswordValidator()
++	let accessGranted = false
++
+ 	test('Entering a correct password', ({ given, when, then }) => {
+ 		given('I have previously created a password', () => {
+-			pending()
++			passwordValidator.setPassword('1234')
+ 		})
+ 		when('I enter my password correctly', () => {
+-			pending()
++			accessGranted = passwordValidator.validatePassword('1234')
+ 		})
+ 		then('I should be granted access', () => {
+-			pending()
++			expect(accessGranted).toBe(true)
+ 		})
+ 	})
+ })

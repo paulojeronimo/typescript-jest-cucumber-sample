@@ -1,0 +1,31 @@
+diff --git a/jest.config.ts b/jest.config.ts
+index 283d932..ef1fa59 100644
+--- a/jest.config.ts
++++ b/jest.config.ts
+@@ -146,10 +146,11 @@ export default {
+   // testLocationInResults: false,
+ 
+   // The glob patterns Jest uses to detect test files
+-  // testMatch: [
+-  //   "**/__tests__/**/*.[jt]s?(x)",
+-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
+-  // ],
++  testMatch: [
++	"**/__tests__/**/*.[jt]s?(x)",
++	"**/?(*.)+(spec|test).[tj]s?(x)",
++	"**/*.steps.ts"
++  ],
+ 
+   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
+   // testPathIgnorePatterns: [
+@@ -172,7 +173,9 @@ export default {
+   // timers: "real",
+ 
+   // A map from regular expressions to paths to transformers
+-  // transform: undefined,
++  transform: {
++	"^.+\\.tsx?$": "ts-jest"
++  },
+ 
+   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
+   // transformIgnorePatterns: [
